@@ -18,9 +18,9 @@ node5 = Node('Acciones US', amount=500000.0, parent=node2)
 node6 = Node('Acciones Chile', amount=200000.0, parent=node2)
 
 """
-Implementa la función print_tree, que recibe como único argumento el nodo
+Implementa la función print_tree, que debe recibir como único argumento el nodo
 raíz de un árbol e imprime los valores de name y amount de cada nodo
-de forma ordenada.
+de forma ordenada y con la indentación del ejemplo.
 Ejemplo:
 >> print_tree(root)
 Total: 1000000.0
