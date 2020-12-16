@@ -13,7 +13,7 @@ def fib(n):
             print(b, end=', ')
         a, b = b, a+b
         his.append(b)
-    return "La secuencia Fibonacci de {}, es {}".format(n, b)
+    return "el n-esimo numero de una serie Fibonacci, de {} numeros es: {}".format(n, b)
 
 
 
