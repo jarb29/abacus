@@ -6,7 +6,15 @@
 
 
 def fib(n):
-    pass
+    his = []
+    a, b = 0,1
+    while len(his) < n -1:
+        if len(his) < 10:
+            print(b, end=', ')
+        a, b = b, a+b
+        his.append(b)
+    return "el n-esimo numero de una serie Fibonacci, de {} numeros es: {}".format(n, b)
+
 
 
 if __name__ == "__main__":
