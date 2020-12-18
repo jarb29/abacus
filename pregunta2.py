@@ -33,17 +33,18 @@ Total: 1000000.0
 >>
 """
 
-def print_node(node, nivel):
-  print("{} {}: {} ".format(" "*nivel, node.name, node.amount))
-  if node.children:
-    for child in node.children:
-      print_node(child, nivel+2)
+### Version Recursiva
+# def print_node(node, nivel):
+#   print("{} {}: {} ".format(" "*nivel, node.name, node.amount))
+#   if node.children:
+#     for child in node.children:
+#       print_node(child, nivel+2)
 
 
+# def print_tree(root_node):
+#   print_node(root_node, 0)
 
-
-def print_tree(root_node):
-  print_node(root_node, 0)
+### Version Iterativa 
 
 
 
