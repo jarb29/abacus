@@ -50,8 +50,6 @@ Total: 1000000.0
 #   if node.children:
 #     for child in node.children:
 #       print_node(child, nivel+2)
-
-
 # def print_tree(root_node):
 #   print_node(root_node, 0)
 
@@ -72,7 +70,7 @@ def print_tree(root_node):
       val_iter = iter(current_node.children)
       childrens.append(val_iter)
       current_node = next(val_iter, None)
-    childrens.pop()
+    _ = childrens.pop() 
     i -= 1
     current_node = next(childrens[-1], None)
     
