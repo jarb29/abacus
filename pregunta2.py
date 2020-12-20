@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 # importing the module 
 from collections import deque  
 
+=======
+>>>>>>> 908aae2f09059c130d9600201c7d35273496147e
 class Node:
     def __init__(self, name, amount=0.0, parent=None):
         self.name = name
@@ -13,16 +16,23 @@ class Node:
 
 
 root = Node('Total', amount=1000000.0)
+<<<<<<< HEAD
 
 node1 = Node('Bonos', amount=300000.0, parent=root)
 
+=======
+node1 = Node('Bonos', amount=300000.0, parent=root)
+>>>>>>> 908aae2f09059c130d9600201c7d35273496147e
 node2 = Node('Acciones', amount=700000.0, parent=root)
 node3 = Node('Bonos US', amount=100000.0, parent=node1)
 node4 = Node('Bonos Chile', amount=200000.0, parent=node1)
 node5 = Node('Acciones US', amount=500000.0, parent=node2)
 node6 = Node('Acciones Chile', amount=200000.0, parent=node2)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 908aae2f09059c130d9600201c7d35273496147e
 """
 Implementa la función print_tree, que debe recibir como único argumento el nodo
 raíz de un árbol e imprime los valores de name y amount de cada nodo
@@ -39,6 +49,7 @@ Total: 1000000.0
 >>
 """
 
+<<<<<<< HEAD
 ### Version Recursiva
 # def print_node(node, nivel):
 #   print("{} {}: {} ".format(" "*nivel, node.name, node.amount))
@@ -99,6 +110,19 @@ def print_tree(root_node):
 
 
 
+=======
+def print_node(node, nivel):
+  print("{} {}: {} ".format(" "*nivel, node.name, node.amount))
+  if node.children:
+    for child in node.children:
+      print_node(child, nivel+2)
+
+
+
+
+def print_tree(root_node):
+  print_node(root_node, 0)
+>>>>>>> 908aae2f09059c130d9600201c7d35273496147e
 
 
 
