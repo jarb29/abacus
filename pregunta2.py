@@ -1,3 +1,6 @@
+# importing the module 
+from collections import deque  
+
 class Node:
     def __init__(self, name, amount=0.0, parent=None):
         self.name = name
@@ -10,14 +13,15 @@ class Node:
 
 
 root = Node('Total', amount=1000000.0)
+
 node1 = Node('Bonos', amount=300000.0, parent=root)
+
 node2 = Node('Acciones', amount=700000.0, parent=root)
 node3 = Node('Bonos US', amount=100000.0, parent=node1)
 node4 = Node('Bonos Chile', amount=200000.0, parent=node1)
 node5 = Node('Acciones US', amount=500000.0, parent=node2)
 node6 = Node('Acciones Chile', amount=200000.0, parent=node2)
-node7 = Node('Acciones Chiiiiiiiiile', amount=800000.0, parent=node3)
-node8 = Node('Acciones Chiiiiiiiiileeeeeeeeeee', amount=800000.0, parent=node7)
+
 
 """
 Implementa la función print_tree, que debe recibir como único argumento el nodo
@@ -48,39 +52,51 @@ Total: 1000000.0
 
 
 ### Version Iterativa 
-# def print_tree(root_node):
-#   current_node = root_node
-#   nivel = 0
-#   print("{} {}: {} ".format(" "*nivel, current_node.name, current_node.amount))
- 
-#   for child in current_node.children:
-#     nivel = 2
-#     print("{} {}: {} ".format(" "*nivel, child.name, child.amount))
-#     while child.children:
-#       current_node = child
-#       nivel +=2
-      # for child in child.children:
-        # print("{} {}: {} ".format(" "*nivel, child.name, child.amount))
-        # current_node = child
-
+def print_node(val, nivel):
+  print("{} {}: {} ".format(" "*2*nivel, val.name, val.amount))
 
 
 def print_tree(root_node):
-
   current_node = root_node
-  print("{}: {} ".format(current_node.name, current_node.amount))
-  nivel = 0
-  while current_node.children:
-    nivel = 2
-    for child in current_node.children:
-      
-      print("{} {}: {} ".format(" "*nivel, child.name, child.amount))
-      current_node = child
-      nivel += 2
-      # for child in child.children:
-        
-      #   print("{} {}: {} ".format(" "*nivel, child.name, child.amount))
-      #   current_node = child
+  childrens = deque()
+
+  i = 0
+  while current_node:
+    while current_node:
+      print_node(current_node, i)
+      i +=1
+      val_iter = iter(current_node.children)
+      childrens.append(val_iter)
+      current_node = next(val_iter, None)
+    childrens.pop()
+    i -= 1
+    current_node = next(childrens[-1], None)
+    
+    while not current_node:
+      i -= 1
+      if len(childrens) > 1:
+        childrens.pop()
+      else:
+        print("\nMerry XMas!!!")
+        return 0
+      current_node = next(childrens[-1], None)
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
