@@ -15,17 +15,14 @@ class Node:
 
 
 root = Node('Total', amount=1000000.0)
-
-node1 = Node('Bonos', amount=300000.0, parent=root)
-
-
 node1 = Node('Bonos', amount=300000.0, parent=root)
 node2 = Node('Acciones', amount=700000.0, parent=root)
 node3 = Node('Bonos US', amount=100000.0, parent=node1)
 node4 = Node('Bonos Chile', amount=200000.0, parent=node1)
 node5 = Node('Acciones US', amount=500000.0, parent=node2)
 node6 = Node('Acciones Chile', amount=200000.0, parent=node2)
-
+# node7 = Node('Acciones Chileee', amount=500000.0, parent=node4)
+# node8 = Node('Acciones Chileeeee', amount=600000.0, parent=node6)
 
 """
 Implementa la función print_tree, que debe recibir como único argumento el nodo
@@ -70,10 +67,9 @@ def print_tree(root_node):
       val_iter = iter(current_node.children)
       childrens.append(val_iter)
       current_node = next(val_iter, None)
-    _ = childrens.pop() 
+    childrens.pop() 
     i -= 1
     current_node = next(childrens[-1], None)
-    
     while not current_node:
       i -= 1
       if len(childrens) > 1:
